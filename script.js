@@ -33,3 +33,41 @@ for (let i = 0; i < p2.length; i++) {
 	p2[i].style.backgroundColor = 'lightblue';
 }
 
+// element.setAttribute()
+const a = document.querySelector('section#a a');
+
+// Buat element baru
+const pBaru = document.createElement('p');
+const teksPBaru = document.createTextNode('Paragraf Baru');
+
+// Simpan tulisan ke dalam paragraf
+pBaru.appendChild(teksPBaru);
+
+// Simpan pBaru di akhir section
+const sectionA = document.getElementById('a');
+sectionA.appendChild(pBaru);
+
+const liBaru = document.createElement('li');
+const teksLiBaru = document.createTextNode('Item Baru');
+liBaru.appendChild(teksLiBaru);
+
+const ul = document.querySelector('section#b ul');
+const li3 = ul.querySelector('li:nth-child(2)');
+ul.insertBefore(liBaru, li3);
+
+const link = document.getElementsByTagName('a')[0];
+sectionA.removeChild(link);
+
+const sectionB = document.getElementById('b');
+const p5 = sectionB.querySelector('p');
+
+const h2Baru = document.createElement('h2');
+const teksH2Baru = document.createTextNode('Judul Baru!');
+
+h2Baru.appendChild(teksH2Baru);
+sectionB.replaceChild(h2Baru, p5);
+
+pBaru.style.backgroundColor = 'lightgreen';
+li3.style.backgroundColor = 'lightgreen';
+h2Baru.style.backgroundColor = 'lightgreen';
+
